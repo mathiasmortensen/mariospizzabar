@@ -36,6 +36,9 @@ public class Pizza {
     }
 
 
-
+    //toString så den printer noget læseligt ud
+    public String toString() {
+        return " " + nummer + ". " + navn + " " + pris + "kr";
+    }
 
 }
