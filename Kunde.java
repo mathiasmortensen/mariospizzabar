@@ -2,19 +2,22 @@ public class Kunde {
 
     private String navn;
     private String email;
-    private int telefonNr;
+    private String telefonNr;
     boolean guldKunde = false;
 
-    public Kunde(String navn, String email, int telefonNr) {
+    //KUN ONLINE
+    public Kunde(String navn, String email, String telefonNr) {
         this.navn = navn;
         this.email = email;
         this.telefonNr = telefonNr;
     }
 
+    //KUN WALK-IN
     public Kunde(String navn){
         this.navn = navn;
     }
 
+    //Hvordan walk-in guldkunde?
     public boolean isGuldKunde(){
         return guldKunde;
     }

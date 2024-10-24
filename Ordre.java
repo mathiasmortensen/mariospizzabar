@@ -44,7 +44,7 @@ public class Ordre {
     }
 
 
-
+//Skal genere en tekstil med indholdet: DATO + 000(Ordre på dagen);KUNDE(if online så NAVN - E-Mail - TLF nr);Pizzaer;Pris
     public void FileWriter() {
         if (!aktiv) {
             String forbrugerFil = "Ordre Arkiv.txt";
