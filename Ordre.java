@@ -7,6 +7,7 @@ public class Ordre {
     private Kunde kunde;
     private int pris;
     private boolean aktiv;
+    private int o = 0;
 
 
 
@@ -47,14 +48,27 @@ public class Ordre {
 //Skal genere en tekstil med indholdet: DATO + 000(Ordre på dagen);KUNDE(if online så NAVN - E-Mail - TLF nr);Pizzaer;Pris
     public void FileWriter() {
         if (!aktiv) {
-            String forbrugerFil = "Ordre Arkiv.txt";
+            String forbrugerFil = "OrdreArkiv.txt";
 
             try (FileWriter writer = new FileWriter(forbrugerFil, true)) {
                 //writer.append(dagsDato)
-                writer.append(kunde + ";");
-                writer.append(pizza + ";");
-                writer.append(pris + ";");
-                writer.append("\n");
+                if(kunde.getEmail() == null && kunde.getTelefonNr() == null){
+                    String ordreNummer = String.format("%03d", o);
+                    writer.append("Dagsdato" + ordreNummer + ";");
+                    writer.append("WalkIn kunde: " + kunde.getNavn() + ";");
+                    writer.append(pizza + ";");
+                    writer.append(pris + ";");
+                    writer.append("\n");
+                    o++;
+                }else{
+                    String ordreNummer = String.format("%03d", o);
+                    writer.append("Dagsdato" + ordreNummer + ";");
+                    writer.append("Online kunde: " + kunde.getNavn() + kunde.getTelefonNr() + kunde.getEmail() + ";");
+                    writer.append(pizza + ";");
+                    writer.append(pris + ";");
+                    writer.append("\n");
+                    o++;
+                }
             }
             catch (IOException e) {
                 throw new RuntimeException(e);
