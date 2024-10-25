@@ -22,7 +22,7 @@ public class Ordre {
     public int getPris() {
         pris += pizza.getPris();
 
-        float nyPris = (float) (pris * 0.10);
+        float nyPris = (float) (pris * 0.90);
 
         if(kunde.isGuldKunde()){
             pris += nyPris;

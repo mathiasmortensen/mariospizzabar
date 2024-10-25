@@ -8,9 +8,13 @@ public class Menu {
         this.pizzaMenu = new ArrayList<>();
     }
 
+
+
     public void addPizza(Pizza pizza) {
         pizzaMenu.add(pizza);
     }
+
+
 
     public void updatePizzaPris(String nummer, int nyPris) {
         for (Pizza pizza : pizzaMenu) {
