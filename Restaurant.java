@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 
-public class Restaurant {
+public class Restaurant { //
     private static boolean aktiv;
 
     public static void main(String[] args) {

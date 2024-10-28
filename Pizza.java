@@ -1,4 +1,4 @@
-public class Pizza {
+public class Pizza { //
 
     private int pris;
     private String navn;

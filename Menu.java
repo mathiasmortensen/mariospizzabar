@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class Menu {
+public class Menu { //
 
     private ArrayList<Pizza> pizzaMenu;
     private final String FILE_PATH = "menu.txt"; // Bruges til at låse FILE_PATH så den ikke ved en fejl bliver ændret.

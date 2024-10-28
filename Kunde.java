@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Kunde {
+public class Kunde { //
 
     private String navn;
     private String email;

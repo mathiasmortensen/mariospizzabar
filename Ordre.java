@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 
 
-public class Ordre {
-    
+public class Ordre { //
+
     private     ArrayList<Pizza>        pizzaer;
     private     Kunde                   kunde;
     private     Pizza                   pizza;
