@@ -1,5 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Ordre {
 
@@ -11,8 +12,9 @@ public class Ordre {
 
 
 
-    public Ordre(Pizza pizza) {
-        this.pizza = pizza;
+
+    public Ordre(Pizza pizza, Kunde kunde) {
+        this.pizza = pizza; this.kunde = kunde;
     }
 
     public Pizza getPizza() {
@@ -46,10 +48,9 @@ public class Ordre {
 
 
 //Skal genere en tekstil med indholdet: DATO + 000(Ordre på dagen);KUNDE(if online så NAVN - E-Mail - TLF nr);Pizzaer;Pris
-    public void FileWriter() {
+    public void writeToFile() {
         if (!aktiv) {
             String forbrugerFil = "OrdreArkiv.txt";
-
             try (FileWriter writer = new FileWriter(forbrugerFil, true)) {
                 //writer.append(dagsDato)
                 if(kunde.getEmail() == null && kunde.getTelefonNr() == null){
@@ -78,5 +79,12 @@ public class Ordre {
         }
 
     }
+
+    public static void main(String[] args) {
+
+
+
+    }
+
 
 }

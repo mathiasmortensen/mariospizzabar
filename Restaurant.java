@@ -1,34 +1,66 @@
-public class Restaurant {
+import java.util.Scanner;
 
+public class Restaurant {
     private static boolean aktiv;
 
-
-
     public static void main(String[] args) {
-Kunde kunde = new Kunde("John osti", "John@sexdominator.com", "12345678");
-
-
-        aktiv = true;
         Menu menu = new Menu();
-            // Opret og tilføj pizzaer til menuen
-            String[] pizzaNavne = {"Vesuvio -", "Amerikaner -", "Cacciatore -", "Carbona -", "Dennis -", "Bertil -", "Silvia -", "Victoria -", "Toronfo -", "Capricciosa -", "Hawai -", "Le Blissola -", "Venezia -", "Mafia -"};
-            int[] pizzaPriser = {57, 53, 57, 63, 65, 57, 61, 61, 61, 61, 61, 61, 61, 61};
+        Scanner scanner = new Scanner(System.in);
+        aktiv = true;
 
-            for (int i = 0; i < pizzaNavne.length; i++) {
-                Pizza pizza = new Pizza();
-                pizza.nyPizza(Integer.toString(i + 1), pizzaNavne[i], pizzaPriser[i]);
-                menu.addPizza(pizza);
+        while (aktiv) {
+            System.out.println("\nPizza Menu System");
+            System.out.println("1. Tilføj ny pizza");
+            System.out.println("2. Opdater pris på pizza");
+            System.out.println("3. Vis menu");
+            System.out.println("4. Slet pizza fra menuen");
+            System.out.println("5. Afslut");
+            System.out.print("Vælg en mulighed: ");
+            String valg = scanner.next();
+            scanner.nextLine();  // Ryd scannerens buffer
+
+            if (valg.equals("1")) {
+                System.out.print("Indtast pizzaens nummer: ");
+                String nummer = scanner.nextLine();
+                System.out.print("Indtast pizzaens navn: ");
+                String navn = scanner.nextLine();
+                System.out.print("Indtast pizzaens pris: ");
+                int pris = scanner.nextInt();
+                scanner.nextLine();  // Ryd scannerens buffer
+                Pizza nyPizza = new Pizza(nummer, navn, pris);
+                menu.addPizza(nyPizza);
+                System.out.println("Pizza tilføjet til menuen.");
+
             }
+            else if (valg.equals("2")) {
+                System.out.print("Indtast nummeret på pizzaen, hvis pris skal opdateres: ");
+                String opdaterNummer = scanner.nextLine();
+                System.out.print("Indtast den nye pris: ");
+                int nyPris = scanner.nextInt();
+                scanner.nextLine();  // Ryd scannerens buffer
+                menu.updatePizzaPris(opdaterNummer, nyPris);
 
-            // Vis menuen
-            menu.visMenu();
+            }
+            else if (valg.equals("3")) {
+                menu.visMenu();
 
-        while(aktiv) {
-            menu.updatePizzaPris("1", 60);
-            menu.visMenu();
-            aktiv = false;
+            }
+            else if (valg.equals("4")) {
+                System.out.print("Indtast nummeret på pizzaen, der skal slettes: ");
+                String slettetNummer = scanner.nextLine();
+                menu.removePizza(slettetNummer);
+
+            }
+            else if (valg.equals("5")) {
+                aktiv = false;
+                System.out.println("Afslutter programmet.");
+
+            }
+            else {
+                System.out.println("Ugyldigt valg, prøv igen.");
+            }
         }
 
-
-
+        scanner.close();
+    }
 }

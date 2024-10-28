@@ -5,7 +5,7 @@ public class Pizza {
     private String nummer;
 
 
-    public void nyPizza(String nummer, String navn, int pris) {
+    public Pizza(String nummer, String navn, int pris) {
         this.nummer = nummer;
         this.pris = pris;
         this.navn = navn;
