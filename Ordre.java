@@ -1,37 +1,39 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.time.LocalDate;
+
 
 public class Ordre {
+    
+    private     ArrayList<Pizza>        pizzaer;
+    private     Kunde                   kunde;
+    private     Pizza                   pizza;
+    private     int                     pris;
+    private     boolean                 aktiv;
+    private     static int              o = 0;// Gør o statisk, så den opdateres korrekt
 
-    private Pizza pizza;
-    private Kunde kunde;
-    private int pris;
-    private boolean aktiv;
-    private int o = 0;
 
-
-
-
-    public Ordre(Pizza pizza, Kunde kunde) {
-        this.pizza = pizza; this.kunde = kunde;
+    public Ordre(ArrayList<Pizza> pizzaer, Kunde kunde) {
+        this.pizzaer = pizzaer;
+        this.kunde = kunde;
+        this.aktiv = true; // Initialisere som aktiv ordre
     }
 
     public Pizza getPizza() {
         return pizza;
     }
 
+
     public int getPris() {
-        pris += pizza.getPris();
-
+        for(int i = 0; i < pizzaer.size(); i++) {
+            pris += pizzaer.get(i).getPris();
+        }
         float nyPris = (float) (pris * 0.90);
-
-        if(kunde.isGuldKunde()){
+        if (kunde.erGuldKunde()) {
             pris += nyPris;
         }
-
         return pris;
-
     }
 
     public Kunde getKunde() {
@@ -46,45 +48,32 @@ public class Ordre {
         this.aktiv = aktiv;
     }
 
-
-//Skal genere en tekstil med indholdet: DATO + 000(Ordre på dagen);KUNDE(if online så NAVN - E-Mail - TLF nr);Pizzaer;Pris
     public void writeToFile() {
         if (!aktiv) {
             String forbrugerFil = "OrdreArkiv.txt";
             try (FileWriter writer = new FileWriter(forbrugerFil, true)) {
-                //writer.append(dagsDato)
-                if(kunde.getEmail() == null && kunde.getTelefonNr() == null){
-                    String ordreNummer = String.format("%03d", o);
-                    writer.append("Dagsdato" + ordreNummer + ";");
-                    writer.append("WalkIn kunde: " + kunde.getNavn() + ";");
-                    writer.append(pizza + ";");
-                    writer.append(pris + ";");
-                    writer.append("\n");
-                    o++;
-                }else{
-                    String ordreNummer = String.format("%03d", o);
-                    writer.append("Dagsdato" + ordreNummer + ";");
-                    writer.append("Online kunde: " + kunde.getNavn() + kunde.getTelefonNr() + kunde.getEmail() + ";");
-                    writer.append(pizza + ";");
-                    writer.append(pris + ";");
-                    writer.append("\n");
-                    o++;
+                LocalDate dato = LocalDate.now();
+                String ordreNummer = String.format("%03d", o);
+                writer.append("\n");
+                writer.append(dato + "-" + ordreNummer + ";");
+                if (kunde.getEmail() == null && kunde.getTelefonNr() == null) {
+                    writer.append("WalkIn kunde: " + kunde.getNavn() + "-");
+                } else {
+                    writer.append("Online kunde: " + kunde.getNavn() + " - " + kunde.getTelefonNr() + " - " + kunde.getEmail() + ";");
                 }
-            }
-            catch (IOException e) {
+                for (Pizza pizza : pizzaer) {
+                    writer.append(pizza.toString() + ";");
+                }
+                writer.append(" Samlet pris: "+getPris() + ";");
+                writer.append("\n");
+                o++;
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-
         }
-
-    }
-
-    public static void main(String[] args) {
-
-
-
-    }
-
-
 }
+        public void saveOrderToFile() {
+            this.setAktiv(false);
+            this.writeToFile();
+        }
+    }

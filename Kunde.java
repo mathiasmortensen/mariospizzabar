@@ -34,7 +34,7 @@ public class Kunde {
     }
 
     //Hvordan walk-in guldkunde?
-    public boolean isGuldKunde(){
+    public boolean erGuldKunde(){
         return guldKunde;
     }
 

@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class Restaurant {
     private static boolean aktiv;
@@ -14,7 +16,8 @@ public class Restaurant {
             System.out.println("2. Opdater pris på pizza");
             System.out.println("3. Vis menu");
             System.out.println("4. Slet pizza fra menuen");
-            System.out.println("5. Afslut");
+            System.out.println("5. Opret ny ordre");
+            System.out.println("6. Afslut");
             System.out.print("Vælg en mulighed: ");
             String valg = scanner.next();
             scanner.nextLine();  // Ryd scannerens buffer
@@ -52,6 +55,48 @@ public class Restaurant {
 
             }
             else if (valg.equals("5")) {
+                 ArrayList<Pizza> valgtePizzaer = new ArrayList<>();
+                while (true) {
+                    System.out.print("Indtast pizzaens nummer til ordren (eller 'stop' for at afslutte): ");
+                    String pizzaNummer = scanner.nextLine();
+
+                    if (pizzaNummer.equalsIgnoreCase("stop")) {
+                        break;
+                    }
+
+                    Pizza valgtPizza = menu.findPizza(pizzaNummer);
+                    if (valgtPizza != null) {
+                        valgtePizzaer.add(valgtPizza);
+                    } else {
+                        System.out.println("Pizza med dette nummer blev ikke fundet.");
+                    }
+                }
+
+                System.out.println("Er det en online kunde? (y/n): ");
+                String erOnline = scanner.nextLine();
+                Kunde kunde;
+
+                if (erOnline.equalsIgnoreCase("y")) {
+                    System.out.print("Indtast kundens navn: ");
+                    String navn = scanner.nextLine();
+                    System.out.print("Indtast kundens e-mail: ");
+                    String email = scanner.nextLine();
+                    System.out.print("Indtast kundens telefonnummer: ");
+                    String telefonNr = scanner.nextLine();
+                    kunde = new Kunde(navn, email, telefonNr);
+                } else {
+                    System.out.print("Indtast kundens navn: ");
+                    String navn = scanner.nextLine();
+                    kunde = new Kunde(navn);
+                }
+
+                Ordre ordre = new Ordre(valgtePizzaer, kunde);
+                ordre.saveOrderToFile();
+                System.out.println("Ordre gemt.");
+            }
+
+
+            else if (valg.equals("6")) {
                 aktiv = false;
                 System.out.println("Afslutter programmet.");
 
