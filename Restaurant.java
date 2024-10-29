@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -9,6 +11,7 @@ public class Restaurant { //
         Menu menu = new Menu();
         Scanner scanner = new Scanner(System.in);
         aktiv = true;
+        Bestillingsliste listen = new Bestillingsliste();
 
         while (aktiv) {
             System.out.println("\nPizza Menu System");
@@ -20,7 +23,7 @@ public class Restaurant { //
             System.out.println("6. Afslut");
             System.out.print("Vælg en mulighed: ");
             String valg = scanner.next();
-            scanner.nextLine();  // Ryd scannerens buffer
+            scanner.nextLine();
 
             if (valg.equals("1")) {
                 System.out.print("Indtast pizzaens nummer: ");
@@ -92,7 +95,8 @@ public class Restaurant { //
 
                 Ordre ordre = new Ordre(valgtePizzaer, kunde);
                 ordre.saveOrderToFile();
-                System.out.println("Ordre gemt.");
+                listen.tilfoejOrdre(ordre);
+                System.out.println("Ordre gemt og tilføjet til Bestillingslisten");
             }
 
 

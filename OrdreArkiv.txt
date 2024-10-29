@@ -1,0 +1,50 @@
+2024-10-29-001;Online kunde: Valdemar - 7270000 - valde@mar.com; 2. Amerikaner 69kr; Samlet pris: 69;
+
+2024-10-29-002;Online kunde: Theo - 2000000 - theo@dor.com; 4. Carbona 63kr; 4. Carbona 63kr; 4. Carbona 63kr; Samlet pris: 189;
+
+2024-10-29-003;WalkIn kunde: Mathilde- 1. Vesuvio 57kr; 5. Dennis 65kr; 4. Carbona 63kr; Samlet pris: 185;
+
+2024-10-29-004;Online kunde: Valdemar - 7270000 - valde@mar.com; 2. Amerikaner 69kr; 7. Silvia 61kr; 3. Cacciatore 57kr; Samlet pris: 187;
+
+2024-10-29-005;WalkIn kunde: Mathilde- 2. Amerikaner 69kr; 2. Amerikaner 69kr; 2. Amerikaner 69kr; Samlet pris: 207;
+
+2024-10-29-006;Online kunde: Nikodem - 21687495 - nikoeatsbutter@gmail.com; 2. Amerikaner 69kr; 2. Amerikaner 69kr; 2. Amerikaner 69kr; Samlet pris: 207;
+
+2024-10-29-007;Online kunde: Valdemar - 7270000 - valde@mar.com; 2. Amerikaner 69kr; Samlet pris: 69;
+
+2024-10-29-008;Online kunde: Theo - 2000000 - theo@dor.com; 4. Carbona 63kr; 4. Carbona 63kr; 4. Carbona 63kr; Samlet pris: 189;
+
+2024-10-29-009;WalkIn kunde: Mathilde- 1. Vesuvio 57kr; 5. Dennis 65kr; 4. Carbona 63kr; Samlet pris: 185;
+
+2024-10-29-010;Online kunde: Valdemar - 7270000 - valde@mar.com; 2. Amerikaner 69kr; 7. Silvia 61kr; 3. Cacciatore 57kr; Samlet pris: 187;
+
+2024-10-29-011;WalkIn kunde: Mathilde- 2. Amerikaner 69kr; 2. Amerikaner 69kr; 2. Amerikaner 69kr; Samlet pris: 207;
+
+2024-10-29-012;Online kunde: Nikodem - 21687495 - nikoeatsbutter@gmail.com; 2. Amerikaner 69kr; 2. Amerikaner 69kr; 2. Amerikaner 69kr; Samlet pris: 207;
+
+2024-10-29-013;Online kunde: Valdemar - 7270000 - valde@mar.com; 2. Amerikaner 69kr; Samlet pris: 69;
+
+2024-10-29-014;Online kunde: Theo - 2000000 - theo@dor.com; 4. Carbona 63kr; 4. Carbona 63kr; 4. Carbona 63kr; Samlet pris: 189;
+
+2024-10-29-015;WalkIn kunde: Mathilde- 1. Vesuvio 57kr; 5. Dennis 65kr; 4. Carbona 63kr; Samlet pris: 185;
+
+2024-10-29-016;Online kunde: Valdemar - 7270000 - valde@mar.com; 2. Amerikaner 69kr; 7. Silvia 61kr; 3. Cacciatore 57kr; Samlet pris: 187;
+
+2024-10-29-017;WalkIn kunde: Mathilde- 2. Amerikaner 69kr; 2. Amerikaner 69kr; 2. Amerikaner 69kr; Samlet pris: 207;
+
+2024-10-29-018;Online kunde: Nikodem - 21687495 - nikoeatsbutter@gmail.com; 2. Amerikaner 69kr; 2. Amerikaner 69kr; 2. Amerikaner 69kr; Samlet pris: 207;
+
+2024-10-29-019;Online kunde: Valdemar - 7270000 - valde@mar.com; 2. Amerikaner 69kr; Samlet pris: 69;
+
+2024-10-29-020;Online kunde: Theo - 2000000 - theo@dor.com; 4. Carbona 63kr; 4. Carbona 63kr; 4. Carbona 63kr; Samlet pris: 189;
+
+2024-10-29-021;WalkIn kunde: Mathilde- 1. Vesuvio 57kr; 5. Dennis 65kr; 4. Carbona 63kr; Samlet pris: 185;
+
+2024-10-29-022;Online kunde: Valdemar - 7270000 - valde@mar.com; 2. Amerikaner 69kr; 7. Silvia 61kr; 3. Cacciatore 57kr; Samlet pris: 187;
+
+2024-10-29-023;WalkIn kunde: Mathilde- 2. Amerikaner 69kr; 2. Amerikaner 69kr; 2. Amerikaner 69kr; Samlet pris: 207;
+
+2024-10-29-024;Online kunde: Nikodem - 21687495 - nikoeatsbutter@gmail.com; 2. Amerikaner 69kr; 2. Amerikaner 69kr; 2. Amerikaner 69kr; Samlet pris: 207;
+
+
+2024-10-29-001;WalkIn kunde: Ninja- 5. Dennis 65kr ; 6. Bertil 57kr ; 5. Dennis 65kr ; Samlet pris: 187;

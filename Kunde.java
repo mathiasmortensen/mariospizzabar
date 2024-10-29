@@ -7,7 +7,6 @@ public class Kunde { //
     private String navn;
     private String email;
     private String telefonNr;
-    boolean guldKunde = false;
 
     //KUN ONLINE
     public Kunde(String navn, String email, String telefonNr) {
@@ -21,6 +20,7 @@ public class Kunde { //
         this.navn = navn;
     }
 
+
     public String getNavn() {
         return navn;
     }
@@ -33,10 +33,6 @@ public class Kunde { //
         return telefonNr;
     }
 
-    //Hvordan walk-in guldkunde?
-    public boolean erGuldKunde(){
-        return guldKunde;
-    }
 
     public static void readFile()
     {

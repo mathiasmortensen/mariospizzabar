@@ -23,13 +23,14 @@ public class Menu { //
                 pizza.setPris(nyPris);
                 saveMenuToFile();  // Opdaterer txt filen efter ændring af pris
                 System.out.println("Prisen for pizzaen " + pizza.getNavn() + " er opdateret til " + nyPris + " kr.");
+                return;
             }
         }
     }
 
     //Printer indholdet af menuen ud
     public void visMenu() {
-        System.out.println("Menu:");
+        System.out.println("Menu: ");
         for (Pizza pizza : pizzaMenu) {
             System.out.println(pizza);
         }
