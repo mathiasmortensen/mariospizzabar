@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Restaurant { //
     private static boolean aktiv;
 
-    public static void main(String[] args) {
+    public void startRestaurant() {
         Menu menu = new Menu();
         Scanner scanner = new Scanner(System.in);
         aktiv = true;
