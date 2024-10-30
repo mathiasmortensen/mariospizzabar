@@ -32,7 +32,7 @@ public class Restaurant { //
                 String navn = scanner.nextLine();
                 System.out.print("Indtast pizzaens pris: ");
                 int pris = scanner.nextInt();
-                scanner.nextLine();  // Ryd scannerens buffer
+                scanner.nextLine();
                 Pizza nyPizza = new Pizza(nummer, navn, pris);
                 menu.addPizza(nyPizza);
                 System.out.println("Pizza tilføjet til menuen.");
