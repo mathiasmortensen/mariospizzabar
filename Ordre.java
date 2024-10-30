@@ -50,15 +50,17 @@ public class Ordre {
 
 
     public int getPris() {
-        for (int i = 0; i < pizzaer.size(); i++) {
-            pris += pizzaer.get(i).getPris();
+        int samletPris = 0;
+        for (Pizza pizza : pizzaer) {
+            samletPris += pizza.getPris();
         }
         float nyPris = (float) (pris * 0.90);
         if (erGuldKunde()) {
             pris += nyPris;
         }
-        return pris;
+        return samletPris;
     }
+
 
     public Kunde getKunde() {
         return kunde;
@@ -117,7 +119,7 @@ public class Ordre {
                         String pizzaNavn = item.trim().split(" ")[1]; // Hent pizza-navnet
 
                         if (pizzaNavn.equalsIgnoreCase("kunde:")) {
-                            continue; // Spring over til næste iteration, hvis pizzaNavn er "kunde:"
+                            continue; // Spring over til næste iteration, hvis pizzaNavn er "kunde"
                         }
 
                         // Tjek om pizzaen allerede findes i listen

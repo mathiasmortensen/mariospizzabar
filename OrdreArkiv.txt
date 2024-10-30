@@ -56,3 +56,15 @@
 2024-10-30-001;WalkIn kunde: Theo- 2. Amerikaner 69kr ; 3. Cacciatore 57kr ; 4. Carbona 63kr ; Samlet pris: 189;
 
 2024-10-30-001;Online kunde: dennis  - 33333333 - mathias@mortensen-it.dk; 2. Amerikaner 69kr ; Samlet pris: 69;
+
+2024-10-30-001;WalkIn kunde: mohammed- 2. Amerikaner 69kr ; 3. Cacciatore 57kr ; 4. Carbona 63kr ; 5. Dennis 65kr ; 6. Bertil 57kr ; Samlet pris: 311;
+
+2024-10-30-001;WalkIn kunde: mohammed og familie- 1. Vesuvio  57kr ; 2. Amerikaner 69kr ; 3. Cacciatore 57kr ; 4. Carbona 63kr ; 1. Vesuvio  57kr ; 2. Amerikaner 69kr ; 3. Cacciatore 57kr ; 4. Carbona 63kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; 1. Vesuvio  57kr ; Samlet pris: 1119;
+
+2024-10-30-001;WalkIn kunde: ali- 1. Vesuvio  57kr ; Samlet pris: 57;
+
+2024-10-30-002;WalkIn kunde: mo- 2. Amerikaner 69kr ; 2. Amerikaner 69kr ; Samlet pris: 138;
+
+2024-10-30-001;WalkIn kunde: mo- 1. Vesuvio  57kr ; 2. Amerikaner 69kr ; Samlet pris: 0;
+
+2024-10-30-001;WalkIn kunde: mo- 1. Vesuvio  57kr ; 2. Amerikaner 69kr ; Samlet pris: 126;
