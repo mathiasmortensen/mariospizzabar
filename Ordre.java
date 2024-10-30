@@ -97,36 +97,12 @@ public class Ordre {
         }
     }
 
-/*
-    private boolean checkGuldKunde(String telefonNr) {
-        int pizzaCount = 0;
-        try (BufferedReader br = new BufferedReader(new FileReader("OrdreArkiv.txt"))) {
-            String linje;
-            while ((linje = br.readLine()) != null) {
-                if (linje.contains(telefonNr)) {
-                    String[] data = linje.split(";");
-                    for (String entry : data) {
-                        if (entry.contains("Pizza")) {
-                            pizzaCount++;
-                        }
-                    }
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return pizzaCount > 10;
-    }
-
-*/
-
-
     public void saveOrderToFile() {
         this.setAktiv(false);
         this.writeToFile();
     }
 
-    //
+
     public static void visMestPopulaerePizzaer() {
         String dataFile = "OrdreArkiv.txt";
         ArrayList<String> pizzaNavne = new ArrayList<>();
