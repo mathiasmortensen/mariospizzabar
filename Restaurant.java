@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 
-public class Restaurant { //
+public class Restaurant {
     private static boolean aktiv;
 
     public void startRestaurant() {
@@ -19,8 +19,12 @@ public class Restaurant { //
             System.out.println("2. Opdater pris på pizza");
             System.out.println("3. Vis menu");
             System.out.println("4. Slet pizza fra menuen");
-            System.out.println("5. Opret ny ordre");
-            System.out.println("6. Afslut");
+            System.out.println("5. Gør en kunde til en Guldkunde");
+            System.out.println("6. Opret ny ordre");
+            System.out.println("7. Færdigør ordre");
+            System.out.println("8. Se bestillingsliste");
+            System.out.println("9. Mest populære Pizzaer");
+            System.out.println("0. Afslut");
             System.out.print("Vælg en mulighed: ");
             String valg = scanner.next();
             scanner.nextLine();
@@ -45,7 +49,7 @@ public class Restaurant { //
                 System.out.print("Indtast den nye pris: ");
                 int nyPris = scanner.nextInt();
                 scanner.nextLine();  // Ryd scannerens buffer
-                menu.updatePizzaPris(opdaterNummer, nyPris);
+                menu.opdaterPizzaPris(opdaterNummer, nyPris);
 
             }
             else if (valg.equals("3")) {
@@ -59,6 +63,23 @@ public class Restaurant { //
 
             }
             else if (valg.equals("5")) {
+                System.out.println("Indtast telefonnummer: ");
+                String telefonNr = scanner.nextLine();
+                {
+                    if (telefonNr != null) {
+                        System.out.println("Gemmer telefonnummer: " + telefonNr);
+                        String guldKunder = "guldKunder.txt";
+                        try (FileWriter writer = new FileWriter(guldKunder, true)) {
+                            writer.append(telefonNr).append("\n");
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    } else {
+                        System.out.println("Ingen telefonnummer tilgængelig for guldkunde.");
+                    }
+                }
+            }
+            else if (valg.equals("6")) {
                  ArrayList<Pizza> valgtePizzaer = new ArrayList<>();
                 while (true) {
                     System.out.print("Indtast pizzaens nummer til ordren (eller 'stop' for at afslutte): ");
@@ -100,8 +121,23 @@ public class Restaurant { //
                 System.out.println("Ordre gemt og tilføjet til Bestillingslisten");
             }
 
+            else if(valg.equals("7")) {
+                int index;
+                listen.seListen();
+                System.out.print("Hvilken ordre er færdig? ");
+                index = scanner.nextInt();
+                listen.sletOrdre(index);
+            }
 
-            else if (valg.equals("6")) {
+            else if (valg.equals("8")) {
+                listen.seListen();
+            }
+
+            else if(valg.equals("9")) {
+                Ordre.visMestPopulaerePizzaer();
+            }
+
+            else if (valg.equals("0")) {
                 aktiv = false;
                 System.out.println("Afslutter programmet.");
 

@@ -50,7 +50,7 @@ public class Ordre {
 
 
     public int getPris() {
-        for(int i = 0; i < pizzaer.size(); i++) {
+        for (int i = 0; i < pizzaer.size(); i++) {
             pris += pizzaer.get(i).getPris();
         }
         float nyPris = (float) (pris * 0.90);
@@ -88,7 +88,7 @@ public class Ordre {
                 for (Pizza pizza : pizzaer) {
                     writer.append(pizza.toString() + ";");
                 }
-                writer.append(" Samlet pris: "+getPris() + ";");
+                writer.append(" Samlet pris: " + getPris() + ";");
                 writer.append("\n");
                 o++;
             } catch (IOException e) {
@@ -125,4 +125,65 @@ public class Ordre {
         this.setAktiv(false);
         this.writeToFile();
     }
+
+
+    public static void visMestPopulaerePizzaer() {
+        String dataFile = "OrdreArkiv.txt";
+        ArrayList<String> pizzaNavne = new ArrayList<>();
+        ArrayList<Integer> pizzaTællinger = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(dataFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] ordreDelt = line.split(";");
+                for (String item : ordreDelt) {
+                    if (item.contains("kr")) {  // Find kun pizzaer baseret på "kr"
+                        String pizzaNavn = item.trim().split(" ")[1]; // Hent pizza-navnet
+
+                        if (pizzaNavn.equalsIgnoreCase("kunde:")) {
+                            continue; // Spring over til næste iteration, hvis pizzaNavn er "kunde"
+                        }
+
+                        // Tjek om pizzaen allerede findes i listen
+                        int index = pizzaNavne.indexOf(pizzaNavn);
+                        if (index != -1) {
+                            // Pizzaen findes allerede, så øg tællingen
+                            pizzaTællinger.set(index, pizzaTællinger.get(index) + 1);
+                        } else {
+                            // Pizzaen findes ikke, så tilføj den
+                            pizzaNavne.add(pizzaNavn);
+                            pizzaTællinger.add(1); // Start tællingen på 1
+                        }
+                    }
+                }
+            }
+
+            // Sorter pizzaerne efter tællinger fra højeste til laveste
+            for (int i = 0; i < pizzaTællinger.size() - 1; i++) {
+                for (int j = 0; j < pizzaTællinger.size() - 1 - i; j++) {
+                    if (pizzaTællinger.get(j) < pizzaTællinger.get(j + 1)) {
+                        // Byt tællinger
+                        int tempTælling = pizzaTællinger.get(j);
+                        pizzaTællinger.set(j, pizzaTællinger.get(j + 1));
+                        pizzaTællinger.set(j + 1, tempTælling);
+
+                        // Byt navne
+                        String tempNavn = pizzaNavne.get(j);
+                        pizzaNavne.set(j, pizzaNavne.get(j + 1));
+                        pizzaNavne.set(j + 1, tempNavn);
+                    }
+                }
+            }
+
+            //Udskriv resultatet
+            for (int i = 0; i < pizzaNavne.size(); i++) {
+                System.out.println(pizzaNavne.get(i) + " - bestilt " + pizzaTællinger.get(i) + " gange");
+            }
+
+        } catch (IOException e) {
+            System.out.println("Fejl ved læsning fra fil: " + e.getMessage());
+        }
+    }
+
+}
 
