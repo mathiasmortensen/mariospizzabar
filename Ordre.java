@@ -126,7 +126,7 @@ public class Ordre {
         this.writeToFile();
     }
 
-
+    //
     public static void visMestPopulaerePizzaer() {
         String dataFile = "OrdreArkiv.txt";
         ArrayList<String> pizzaNavne = new ArrayList<>();
