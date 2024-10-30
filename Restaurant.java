@@ -25,6 +25,7 @@ public class Restaurant { //
             String valg = scanner.next();
             scanner.nextLine();
 
+            //valg 1
             if (valg.equals("1")) {
                 System.out.print("Indtast pizzaens nummer: ");
                 String nummer = scanner.nextLine();
