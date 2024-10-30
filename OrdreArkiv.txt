@@ -54,3 +54,5 @@
 2024-10-29-002;WalkIn kunde: mikkel- 2. Amerikaner 69kr ; Samlet pris: 69;
 
 2024-10-30-001;WalkIn kunde: Theo- 2. Amerikaner 69kr ; 3. Cacciatore 57kr ; 4. Carbona 63kr ; Samlet pris: 189;
+
+2024-10-30-001;Online kunde: dennis  - 33333333 - mathias@mortensen-it.dk; 2. Amerikaner 69kr ; Samlet pris: 69;

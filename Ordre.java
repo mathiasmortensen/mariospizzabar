@@ -106,7 +106,7 @@ public class Ordre {
     public static void visMestPopulaerePizzaer() {
         String dataFile = "OrdreArkiv.txt";
         ArrayList<String> pizzaNavne = new ArrayList<>();
-        ArrayList<Integer> pizzaTællinger = new ArrayList<>();
+        ArrayList<Integer> pizzaTaellinger = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(dataFile))) {
             String line;
@@ -117,31 +117,31 @@ public class Ordre {
                         String pizzaNavn = item.trim().split(" ")[1]; // Hent pizza-navnet
 
                         if (pizzaNavn.equalsIgnoreCase("kunde:")) {
-                            continue; // Spring over til næste iteration, hvis pizzaNavn er "kunde"
+                            continue; // Spring over til næste iteration, hvis pizzaNavn er "kunde:"
                         }
 
                         // Tjek om pizzaen allerede findes i listen
                         int index = pizzaNavne.indexOf(pizzaNavn);
                         if (index != -1) {
                             // Pizzaen findes allerede, så øg tællingen
-                            pizzaTællinger.set(index, pizzaTællinger.get(index) + 1);
+                            pizzaTaellinger.set(index, pizzaTaellinger.get(index) + 1);
                         } else {
                             // Pizzaen findes ikke, så tilføj den
                             pizzaNavne.add(pizzaNavn);
-                            pizzaTællinger.add(1); // Start tællingen på 1
+                            pizzaTaellinger.add(1); // Start tællingen på 1
                         }
                     }
                 }
             }
 
             // Sorter pizzaerne efter tællinger fra højeste til laveste
-            for (int i = 0; i < pizzaTællinger.size() - 1; i++) {
-                for (int j = 0; j < pizzaTællinger.size() - 1 - i; j++) {
-                    if (pizzaTællinger.get(j) < pizzaTællinger.get(j + 1)) {
+            for (int i = 0; i < pizzaTaellinger.size() - 1; i++) {
+                for (int j = 0; j < pizzaTaellinger.size() - 1 - i; j++) {
+                    if (pizzaTaellinger.get(j) < pizzaTaellinger.get(j + 1)) {
                         // Byt tællinger
-                        int tempTælling = pizzaTællinger.get(j);
-                        pizzaTællinger.set(j, pizzaTællinger.get(j + 1));
-                        pizzaTællinger.set(j + 1, tempTælling);
+                        int tempTaelling = pizzaTaellinger.get(j);
+                        pizzaTaellinger.set(j, pizzaTaellinger.get(j + 1));
+                        pizzaTaellinger.set(j + 1, tempTaelling);
 
                         // Byt navne
                         String tempNavn = pizzaNavne.get(j);
@@ -153,7 +153,7 @@ public class Ordre {
 
             //Udskriv resultatet
             for (int i = 0; i < pizzaNavne.size(); i++) {
-                System.out.println(pizzaNavne.get(i) + " - bestilt " + pizzaTællinger.get(i) + " gange");
+                System.out.println(pizzaNavne.get(i) + " - bestilt " + pizzaTaellinger.get(i) + " gange");
             }
 
         } catch (IOException e) {
