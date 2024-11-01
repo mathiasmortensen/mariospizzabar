@@ -1,6 +1,6 @@
 Gruppe 8: 
 
-Mathias Bendix Mortensen (mathiasmortensen)
+Mathias Bendix Mortensen (mathiasmortensen, popperchopper)
 Valdemar Støvring Sørensen (shuresm57)
 Nikodem Zbigniew Kondratowicz (nikozk)
 Markus Frederiksen (diekelmann)
