@@ -119,7 +119,7 @@ public class Ordre {
                         String pizzaNavn = item.trim().split(" ")[1]; // Hent pizza-navnet
 
                         if (pizzaNavn.equalsIgnoreCase("kunde:")) {
-                            continue; // Spring over til næste iteration, hvis pizzaNavn er "kunde"
+                            continue; // Spring navnet over hvis sdet er "kunde"
                         }
 
                         // Tjek om pizzaen allerede findes i listen
@@ -128,9 +128,9 @@ public class Ordre {
                             // Pizzaen findes allerede, så øg tællingen
                             pizzaTaellinger.set(index, pizzaTaellinger.get(index) + 1);
                         } else {
-                            // Pizzaen findes ikke, så tilføj den
+                            // tilføjeæse af Pizza hvis den ikke findes
                             pizzaNavne.add(pizzaNavn);
-                            pizzaTaellinger.add(1); // Start tællingen på 1
+                            pizzaTaellinger.add(1); // Start med at tælle fra 1
                         }
                     }
                 }
